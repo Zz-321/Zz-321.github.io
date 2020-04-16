@@ -2,22 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | Zz Blog</title>
+<title>SPI (Service Provider Interface) | Zz Blog</title>
 <link rel="shortcut icon" href="https://zz-321.github.io/favicon.ico?v=1587044689709">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zz-321.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | Zz Blog - Atom Feed" href="https://zz-321.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="SPI (Service Provider Interface) | Zz Blog - Atom Feed" href="https://zz-321.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
+    <meta name="description" content="SPI是JDK的一种标准。一种服务发现机制。它通过在ClassPath路径下的META-INF/services文件夹查找文件，自动加载文件里所定义的类。这一机制为很多框架扩展提供了可能，比如在Dubbo、JDBC中都使用到了SPI机制。
 ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -81,46 +75,48 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              SPI (Service Provider Interface)
             </h2>
             <div class="post-info">
               <span>
-                2019-01-25
+                2020-04-16
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
+              <img class="post-feature-image" src="https://zz-321.github.io/post-images/spi-service-provider-interface.png" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <p>SPI是JDK的一种标准。一种服务发现机制。它通过在ClassPath路径下的META-INF/services文件夹查找文件，自动加载文件里所定义的类。这一机制为很多框架扩展提供了可能，比如在Dubbo、JDBC中都使用到了SPI机制。</p>
+<p><strong>Dubbo SPI实现机制</strong><br>
+Dubbo SPI的目的也是一样：可以获取类的实例对象，和java的SPI机制非常相似</p>
+<p><em>但是又增加了如下功能：</em><br>
+1、可以方便的获取某一个想要的扩展实现，java的SPI机制就没有提供这样的功能<br>
+2、增加了对扩展点IoC和AOP的支持，一个扩展点可以直接setter注入其它扩展点。</p>
+<p>约定：<br>
+在扩展类的jar包内，放置扩展点配置文件：META-INF/dubbo/接口全限定名，内容为：配置名=扩展实现类全限定名，多个实现类用换行符分隔。 (注意：这里的配置文件是放在你自己的jar包内，不是dubbo本身的jar包内，Dubbo会全ClassPath扫描所有jar包内同名的这个文件，然后进行合并)。</p>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://zz-321.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
         
 
         
